@@ -1,0 +1,176 @@
+|DUT
+input_vector[0] => ripple_carry:add_instance.A[0]
+input_vector[1] => ripple_carry:add_instance.A[1]
+input_vector[2] => ripple_carry:add_instance.A[2]
+input_vector[3] => ripple_carry:add_instance.A[3]
+input_vector[4] => ripple_carry:add_instance.B[0]
+input_vector[5] => ripple_carry:add_instance.B[1]
+input_vector[6] => ripple_carry:add_instance.B[2]
+input_vector[7] => ripple_carry:add_instance.B[3]
+output_vector[0] << ripple_carry:add_instance.S[0]
+output_vector[1] << ripple_carry:add_instance.S[1]
+output_vector[2] << ripple_carry:add_instance.S[2]
+output_vector[3] << ripple_carry:add_instance.S[3]
+output_vector[4] << ripple_carry:add_instance.C_out
+
+
+|DUT|ripple_carry:add_instance
+A[0] => Full_Adder:ripple:0:u.A
+A[1] => Full_Adder:ripple:1:u.A
+A[2] => Full_Adder:ripple:2:u.A
+A[3] => Full_Adder:ripple:3:u.A
+B[0] => Full_Adder:ripple:0:u.B
+B[1] => Full_Adder:ripple:1:u.B
+B[2] => Full_Adder:ripple:2:u.B
+B[3] => Full_Adder:ripple:3:u.B
+S[0] <= Full_Adder:ripple:0:u.S
+S[1] <= Full_Adder:ripple:1:u.S
+S[2] <= Full_Adder:ripple:2:u.S
+S[3] <= Full_Adder:ripple:3:u.S
+C_out <= Full_Adder:ripple:3:u.Cout
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:0:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:0:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:0:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:0:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:0:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:1:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:1:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:1:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:1:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:1:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:2:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:2:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:2:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:2:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:2:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:3:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:3:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:3:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:3:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|ripple_carry:add_instance|Full_Adder:\ripple:3:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,169 @@
+|DUT
+input_vector[0] => mux_41:add_instance.EN
+input_vector[1] => mux_41:add_instance.S1
+input_vector[2] => mux_41:add_instance.S2
+input_vector[3] => mux_41:add_instance.in_vector[0]
+input_vector[4] => mux_41:add_instance.in_vector[1]
+input_vector[5] => mux_41:add_instance.in_vector[2]
+input_vector[6] => mux_41:add_instance.in_vector[3]
+output_vector[0] << mux_41:add_instance.Y
+
+
+|DUT|mux_41:add_instance
+in_vector[0] => and_4:u1.a
+in_vector[1] => and_4:u2.a
+in_vector[2] => and_4:u3.a
+in_vector[3] => and_4:u4.a
+S1 => INVERTER:inv1.A
+S1 => and_4:u2.b
+S1 => and_4:u4.b
+S2 => INVERTER:inv2.A
+S2 => and_4:u3.c
+S2 => and_4:u4.c
+EN => and_4:u1.d
+EN => and_4:u2.d
+EN => and_4:u3.d
+EN => and_4:u4.d
+Y <= or_4:u5.o
+
+
+|DUT|mux_41:add_instance|INVERTER:inv1
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|INVERTER:inv2
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u1
+a => AND_2:u1.A
+b => AND_2:u1.B
+c => AND_2:u2.A
+d => AND_2:u2.B
+o <= AND_2:u3.Y
+
+
+|DUT|mux_41:add_instance|and_4:u1|AND_2:u1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u1|AND_2:u2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u1|AND_2:u3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u2
+a => AND_2:u1.A
+b => AND_2:u1.B
+c => AND_2:u2.A
+d => AND_2:u2.B
+o <= AND_2:u3.Y
+
+
+|DUT|mux_41:add_instance|and_4:u2|AND_2:u1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u2|AND_2:u2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u2|AND_2:u3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u3
+a => AND_2:u1.A
+b => AND_2:u1.B
+c => AND_2:u2.A
+d => AND_2:u2.B
+o <= AND_2:u3.Y
+
+
+|DUT|mux_41:add_instance|and_4:u3|AND_2:u1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u3|AND_2:u2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u3|AND_2:u3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u4
+a => AND_2:u1.A
+b => AND_2:u1.B
+c => AND_2:u2.A
+d => AND_2:u2.B
+o <= AND_2:u3.Y
+
+
+|DUT|mux_41:add_instance|and_4:u4|AND_2:u1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u4|AND_2:u2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|and_4:u4|AND_2:u3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|or_4:u5
+a => OR_2:u1.A
+b => OR_2:u1.B
+c => OR_2:u2.A
+d => OR_2:u2.B
+o <= OR_2:u3.Y
+
+
+|DUT|mux_41:add_instance|or_4:u5|OR_2:u1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|or_4:u5|OR_2:u2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|mux_41:add_instance|or_4:u5|OR_2:u3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.all;
+
+entity ripple_carry is 
+port ( A,B  : in std_logic_vector(3 downto 0);
+	 -- C_in : in std_logic;
+		 S		: out std_logic_vector(3 downto 0);
+		 C_out: out std_logic
+		);
+end entity ripple_carry;
+
+architecture struct of ripple_carry is
+	--signal declaration
+	signal tC : std_logic_vector(4 downto 0);
+begin
+	--initialize 
+	tC(0) <= '0';
+	--component instances
+	for I in 0 to 3 generate
+	begin
+		u : Full_Adder
+		port map (
+			A(I) => A, B(I) => B, tC(I) => C, S(I) => S, tC(I+1) => C
+			);
+	end generate;
+	
+	C_out <= tC(4);
+end struct;
+
+	
+	

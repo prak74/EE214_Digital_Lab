@@ -1,0 +1,411 @@
+|DUT
+input_vector[0] => complex:add_instance.B[0]
+input_vector[1] => complex:add_instance.B[1]
+input_vector[2] => complex:add_instance.B[2]
+input_vector[3] => complex:add_instance.B[3]
+input_vector[4] => complex:add_instance.A[0]
+input_vector[5] => complex:add_instance.A[1]
+input_vector[6] => complex:add_instance.A[2]
+input_vector[7] => complex:add_instance.A[3]
+output_vector[0] << complex:add_instance.Final[0]
+output_vector[1] << complex:add_instance.Final[1]
+output_vector[2] << complex:add_instance.Final[2]
+output_vector[3] << complex:add_instance.Final[3]
+output_vector[4] << complex:add_instance.Final[4]
+output_vector[5] << complex:add_instance.Final[5]
+output_vector[6] << complex:add_instance.Final[6]
+
+
+|DUT|complex:add_instance
+A[0] => prime_check:u1.a[0]
+A[0] => ripple_carry:add.A[0]
+A[1] => prime_check:u1.a[1]
+A[1] => ripple_carry:add.A[1]
+A[2] => prime_check:u1.a[2]
+A[2] => ripple_carry:add.A[2]
+A[3] => prime_check:u1.a[3]
+A[3] => ripple_carry:add.A[3]
+B[0] => prime_check:u2.a[0]
+B[0] => ripple_carry:add.B[0]
+B[1] => prime_check:u2.a[1]
+B[1] => ripple_carry:add.B[1]
+B[2] => prime_check:u2.a[2]
+B[2] => ripple_carry:add.B[2]
+B[3] => prime_check:u2.a[3]
+B[3] => ripple_carry:add.B[3]
+Final[0] <= ripple_carry:add.S[0]
+Final[1] <= ripple_carry:add.S[1]
+Final[2] <= ripple_carry:add.S[2]
+Final[3] <= ripple_carry:add.S[3]
+Final[4] <= ripple_carry:add.C_out
+Final[5] <= prime_check:u2.f
+Final[6] <= prime_check:u1.f
+
+
+|DUT|complex:add_instance|prime_check:u1
+a[0] => OR_2:or1.A
+a[0] => AND_2:and2.A
+a[1] => INVERTER:u1.A
+a[1] => AND_2:and1.A
+a[2] => INVERTER:u2.A
+a[2] => AND_2:and2.B
+a[3] => INVERTER:u3.A
+f <= OR_2:final.Y
+
+
+|DUT|complex:add_instance|prime_check:u1|INVERTER:u1
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|INVERTER:u2
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|INVERTER:u3
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|OR_2:or1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|OR_2:or2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|AND_2:and1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|AND_2:and2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|AND_2:and3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|AND_2:and4
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u1|OR_2:final
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2
+a[0] => OR_2:or1.A
+a[0] => AND_2:and2.A
+a[1] => INVERTER:u1.A
+a[1] => AND_2:and1.A
+a[2] => INVERTER:u2.A
+a[2] => AND_2:and2.B
+a[3] => INVERTER:u3.A
+f <= OR_2:final.Y
+
+
+|DUT|complex:add_instance|prime_check:u2|INVERTER:u1
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|INVERTER:u2
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|INVERTER:u3
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|OR_2:or1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|OR_2:or2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|AND_2:and1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|AND_2:and2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|AND_2:and3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|AND_2:and4
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|prime_check:u2|OR_2:final
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|OR_2:or1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|XNOR_2:xor1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add
+A[0] => Full_Adder:ripple:0:u.A
+A[1] => Full_Adder:ripple:1:u.A
+A[2] => Full_Adder:ripple:2:u.A
+A[3] => Full_Adder:ripple:3:u.A
+B[0] => XOR_2:xorer:0:x.B
+B[1] => XOR_2:xorer:1:x.B
+B[2] => XOR_2:xorer:2:x.B
+B[3] => XOR_2:xorer:3:x.B
+C_in => xor_carry.IN1
+C_in => XOR_2:xorer:0:x.A
+C_in => XOR_2:xorer:1:x.A
+C_in => XOR_2:xorer:2:x.A
+C_in => XOR_2:xorer:3:x.A
+C_in => Full_Adder:ripple:0:u.Cin
+en => C_out.IN1
+en => AND_2:ander:0:a.B
+en => AND_2:ander:1:a.B
+en => AND_2:ander:2:a.B
+en => AND_2:ander:3:a.B
+S[0] <= AND_2:ander:0:a.Y
+S[1] <= AND_2:ander:1:a.Y
+S[2] <= AND_2:ander:2:a.Y
+S[3] <= AND_2:ander:3:a.Y
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|XOR_2:\xorer:0:x
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|XOR_2:\xorer:1:x
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|XOR_2:\xorer:2:x
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|XOR_2:\xorer:3:x
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:0:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:0:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:0:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:0:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:0:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:1:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:1:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:1:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:1:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:1:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:2:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:2:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:2:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:2:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:2:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:3:u
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:3:u|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:3:u|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:3:u|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|Full_Adder:\ripple:3:u|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|AND_2:\ander:0:a
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|AND_2:\ander:1:a
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|AND_2:\ander:2:a
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|complex:add_instance|ripple_carry:add|AND_2:\ander:3:a
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+

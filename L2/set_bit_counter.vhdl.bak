@@ -1,0 +1,4 @@
+entity set_bit_counter is 
+	port (
+			x : in bit_vector(7 downto 0);
+			y : 

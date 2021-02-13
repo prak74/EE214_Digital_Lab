@@ -1,0 +1,76 @@
+|DUT
+input_vector[0] => prime_check:add_instance.a[0]
+input_vector[1] => prime_check:add_instance.a[1]
+input_vector[2] => prime_check:add_instance.a[2]
+input_vector[3] => prime_check:add_instance.a[3]
+output_vector[0] << prime_check:add_instance.f
+
+
+|DUT|prime_check:add_instance
+a[0] => OR_2:or1.A
+a[0] => AND_2:and2.A
+a[1] => INVERTER:u1.A
+a[1] => AND_2:and1.A
+a[2] => INVERTER:u2.A
+a[2] => AND_2:and2.B
+a[3] => INVERTER:u3.A
+f <= OR_2:final.Y
+
+
+|DUT|prime_check:add_instance|INVERTER:u1
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|INVERTER:u2
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|INVERTER:u3
+A => Y.DATAIN
+Y <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|OR_2:or1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|OR_2:or2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|AND_2:and1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|AND_2:and2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|AND_2:and3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|AND_2:and4
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|prime_check:add_instance|OR_2:final
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
