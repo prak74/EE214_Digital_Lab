@@ -23,9 +23,9 @@ VU7DI`Tzl@EfAQ?4z53E2F2
 !s100 1`nWBgISBZCVoBKm`L3TM3
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1613233865
+Z7 !s110 1612954865
 !i10b 1
-Z8 !s108 1613233865.000000
+Z8 !s108 1612954865.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Gates.vhdl|
 Z10 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Gates.vhdl|
 !i113 1
@@ -64,11 +64,11 @@ Vg@]_?6OKn7HQFbih>h<gF2
 !s100 dKkD]PSbK>e_DkeS7^7RO1
 R6
 31
-R7
+Z16 !s110 1612954866
 !i10b 1
-R8
-Z16 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/DUT.vhdl|
-Z17 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/DUT.vhdl|
+Z17 !s108 1612954866.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/DUT.vhdl|
+Z19 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/DUT.vhdl|
 !i113 1
 R11
 R12
@@ -83,11 +83,11 @@ VhafYONgfOI`GXld^bk0hg3
 !s100 SJ>TbE[A>dCC]2ikOj_CU2
 R6
 31
-R7
-!i10b 1
-R8
 R16
+!i10b 1
 R17
+R18
+R19
 !i113 1
 R11
 R12
@@ -319,30 +319,30 @@ R10
 R11
 R12
 Eprime_check
-Z18 w1612954832
-Z19 DPx4 work 5 gates 0 22 @eB5S<QWaBmXNA4jc;3?G2
+Z20 w1612954832
+Z21 DPx4 work 5 gates 0 22 @eB5S<QWaBmXNA4jc;3?G2
 R2
 R3
 !i122 2
 R0
-Z20 8E:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl
-Z21 FE:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl
+Z22 8E:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl
+Z23 FE:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl
 l0
 L6 1
 VM]TD`=L[S_9nb>B3TCJUV0
 !s100 n>>mNG=GMXONM9HP2l2l[1
 R6
 31
-R7
+R16
 !i10b 1
-R8
-Z22 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl|
-Z23 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl|
+R17
+Z24 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl|
+Z25 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/prime_check.vhdl|
 !i113 1
 R11
 R12
 Abehav
-R19
+R21
 R2
 R3
 DEx4 work 11 prime_check 0 22 M]TD`=L[S_9nb>B3TCJUV0
@@ -353,32 +353,32 @@ V1B@bV1SFWARNBJME6bOZB0
 !s100 JmN`8CU4d3CZ8L5;]87lJ2
 R6
 31
-R7
+R16
 !i10b 1
-R8
-R22
-R23
+R17
+R24
+R25
 !i113 1
 R11
 R12
 Etestbench
-Z24 w1612948861
+Z26 w1612948861
 R3
 R2
 !i122 3
 R0
-Z25 8E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl
-Z26 FE:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl
+Z27 8E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl
+Z28 FE:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl
 l0
 L7 1
 V]iKK_Z9L:G9B:i8c]3eFH0
 !s100 bWf8kl8zb90X@P1m>V^K20
 R6
 31
-R7
+R16
 !i10b 1
-R8
-Z27 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl|
+R17
+Z29 !s90 -reportprogress|300|-93|-work|work|E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl|
 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl|
 !i113 1
 R11
@@ -394,11 +394,11 @@ V203;8hF;2DY`Z[d6JJ@a90
 !s100 Xk;_AJVj`d1R?n>jVDgS>0
 R6
 31
-R7
+R16
 !i10b 1
-R8
-R27
-Z28 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl|
+R17
+R29
+Z30 !s107 E:/EE214_Digital_Lab/L4/Part_1_prime_checker/Testbench.vhdl|
 !i113 1
 R11
 R12
