@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+use work.Gates.all;
+
+entity sequence is
+	port ( up_not, rst, clk : in std_logic;
+			 output : out std_logic_vector(2 downto 0)
+			);
+end entity sequence;
+
+architecture str of sequence is
+	
+	--signals
+	signal curr_state, next_state : std_logic_vector(2 downto 0) := "000";
+	
+	--components
+	component state_transition is 
+	port (up_not : in std_logic;
+			curr_state : in std_logic_vector(2 downto 0);
+			next_state : out std_logic_vector(2 downto 0)
+			);
+	end component;
+	
+begin
+		
+		

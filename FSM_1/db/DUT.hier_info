@@ -1,0 +1,51 @@
+|DUT
+input_vector[0] => tail_controller:dut_inst.clk
+input_vector[1] => tail_controller:dut_inst.haz
+input_vector[2] => tail_controller:dut_inst.rightt
+input_vector[3] => tail_controller:dut_inst.leftt
+input_vector[4] => tail_controller:dut_inst.reset
+output_vector[0] << tail_controller:dut_inst.rc
+output_vector[1] << tail_controller:dut_inst.rb
+output_vector[2] << tail_controller:dut_inst.ra
+output_vector[3] << tail_controller:dut_inst.lc
+output_vector[4] << tail_controller:dut_inst.lb
+output_vector[5] << tail_controller:dut_inst.la
+
+
+|DUT|tail_controller:dut_inst
+clk => state~1.DATAIN
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+reset => state.OUTPUTSELECT
+leftt => next_state1.IN0
+leftt => next_state1.IN0
+leftt => next_state1.IN1
+leftt => next_state1.IN0
+leftt => next_state1.IN0
+leftt => next_state1.IN0
+rightt => next_state1.IN1
+rightt => next_state1.IN1
+rightt => next_state1.IN1
+rightt => next_state1.IN0
+rightt => next_state1.IN0
+rightt => next_state1.IN1
+haz => next_state1.IN1
+haz => next_state1.IN1
+haz => next_state1.IN1
+haz => next_state1.IN1
+haz => next_state1.IN1
+haz => next_state1.IN1
+haz => next_state1.IN1
+la <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+lb <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+lc <= lc.DB_MAX_OUTPUT_PORT_TYPE
+ra <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+rb <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+rc <= rc.DB_MAX_OUTPUT_PORT_TYPE
+
+

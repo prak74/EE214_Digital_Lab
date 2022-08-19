@@ -1,0 +1,85 @@
+|DUT
+input_vector[0] => sequence:add_instance.clk
+input_vector[1] => sequence:add_instance.resetn
+input_vector[2] => sequence:add_instance.up_not
+output_vector[0] << sequence:add_instance.out_vec[0]
+output_vector[1] << sequence:add_instance.out_vec[1]
+output_vector[2] << sequence:add_instance.out_vec[2]
+
+
+|DUT|sequence:add_instance
+up_not => state_transition:u1.up_not
+resetn => dFlipFlop:next2.resetn
+resetn => dFlipFlop:next1.resetn
+resetn => dFlipFlop:next0.resetn
+clk => dFlipFlop:next2.clock
+clk => dFlipFlop:next1.clock
+clk => dFlipFlop:next0.clock
+out_vec[0] <= output:u2.out_vec[0]
+out_vec[1] <= output:u2.out_vec[1]
+out_vec[2] <= output:u2.out_vec[2]
+
+
+|DUT|sequence:add_instance|state_transition:u1
+up_not => next_state.IN0
+up_not => next_state.IN1
+up_not => next_state.IN0
+up_not => next_state.IN0
+up_not => next_state.IN0
+curr_state[0] => next_state.IN1
+curr_state[0] => next_state.IN1
+curr_state[0] => next_state.IN0
+curr_state[0] => next_state.IN1
+curr_state[0] => next_state[0].DATAIN
+curr_state[1] => next_state.IN1
+curr_state[1] => next_state.IN1
+curr_state[1] => next_state.IN1
+curr_state[1] => next_state.IN1
+curr_state[2] => next_state.IN1
+curr_state[2] => next_state.IN1
+curr_state[2] => next_state.IN1
+next_state[0] <= curr_state[0].DB_MAX_OUTPUT_PORT_TYPE
+next_state[1] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[2] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|sequence:add_instance|dFlipFlop:next2
+resetn => y.OUTPUTSELECT
+inp => y.DATAA
+clock => y~reg0.CLK
+y <= y~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|sequence:add_instance|dFlipFlop:next1
+resetn => y.OUTPUTSELECT
+inp => y.DATAA
+clock => y~reg0.CLK
+y <= y~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|sequence:add_instance|dFlipFlop:next0
+resetn => y.OUTPUTSELECT
+inp => y.DATAA
+clock => y~reg0.CLK
+y <= y~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|sequence:add_instance|output:u2
+curr_state[0] => out_vec.IN0
+curr_state[0] => out_vec.IN1
+curr_state[0] => out_vec.IN1
+curr_state[0] => out_vec.IN0
+curr_state[0] => out_vec[1].DATAIN
+curr_state[1] => out_vec.IN1
+curr_state[1] => out_vec.IN0
+curr_state[1] => out_vec.IN0
+curr_state[1] => out_vec.IN1
+curr_state[2] => out_vec.IN1
+curr_state[2] => out_vec.IN1
+curr_state[2] => out_vec.IN1
+curr_state[2] => out_vec.IN1
+out_vec[0] <= out_vec.DB_MAX_OUTPUT_PORT_TYPE
+out_vec[1] <= curr_state[0].DB_MAX_OUTPUT_PORT_TYPE
+out_vec[2] <= out_vec.DB_MAX_OUTPUT_PORT_TYPE
+
+

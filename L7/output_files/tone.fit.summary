@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Mar 24 16:14:03 2021
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : tone
+Top-level Entity Name : toneGenerator
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 431 / 1,270 ( 34 % )
+Total pins : 18 / 114 ( 16 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

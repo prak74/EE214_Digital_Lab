@@ -1,0 +1,109 @@
+library ieee;
+use ieee.std_logic_1164.all
+
+entity toneGenerator is
+port (toneOut : out std_logic; --this pin will give your notes output
+clk : in std_logic;
+LED : out std_logic_vector(7 downto 0);
+switch : in std_logic_vector(7 downto 0));
+end entity toneGenerator;
+
+--...............Start the architecture here......................
+architecture bhv of toneGenerator is
+-------------------CODE
+begin 
+
+tone : process(switch,clk)
+	
+	begin
+		if(switch="0000001") then
+
+			if (count_sa1 = 104168) then--240Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (0 => '1', others => '0');
+		
+		elsif(switch="00000010") then
+		
+			if (count_sa1 = 104168) then--270Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (1 => '1', others => '0');
+		
+		elsif(switch="00000100") then
+		
+			if (count_sa1 = 104168) then--300Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (2 => '1', others => '0');
+		
+		elsif(switch="00001000") then
+		
+			if (count_sa1 = 104168) then--320Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (3 => '1', others => '0');
+		
+		elsif(switch="00010000") then
+		
+			if (count_sa1 = 104168) then--360Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (4 => '1', others => '0');
+		
+		elsif(switch="00100000") then
+		
+			if (count_sa1 = 104168) then--400Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (5 => '1', others => '0');
+		
+		elsif(switch="01000000") then
+		
+			if (count_sa1 = 104168) then--450Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (6 => '1', others => '0');
+		
+		elsif(switch="10000000") then
+		
+			if (count_sa1 = 104168) then--480Hz
+				count_sa1 := 1;
+				sa1 := not sa1;
+			else
+				count_sa1 := count_sa1 + 1;
+			end if;
+			toneOut <= sa1;
+			LED <= (7 => '1', others => '0');
+		
+		end if;
+	end process;
+end bhv;

@@ -1,0 +1,75 @@
+# Reading pref.tcl
+# do tone_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {tone.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:26:01 on Mar 27,2021
+# vcom -reportprogress 300 -93 -work work tone.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity toneGenerator
+# -- Compiling architecture structure of toneGenerator
+# End time: 17:26:02 on Mar 27,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {E:/EE214_Digital_Lab/L7/Testbench.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:26:02 on Mar 27,2021
+# vcom -reportprogress 300 -93 -work work E:/EE214_Digital_Lab/L7/Testbench.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity toneGenerator_tb
+# -- Compiling architecture bhv of toneGenerator_tb
+# ** Warning: E:/EE214_Digital_Lab/L7/Testbench.vhdl(26): (vcom-1048) Non-locally static choice (association #1, choice #1) is allowed only if it is the only choice of the only association.
+# End time: 17:26:02 on Mar 27,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /dut_instance=tone_vhd.sdo -L maxv -L gate_work -L work -voptargs="+acc"  toneGenerator_tb
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -sdftyp "/dut_instance=tone_vhd.sdo" -L maxv -L gate_work -L work -voptargs=""+acc"" toneGenerator_tb 
+# Start time: 17:26:02 on Mar 27,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tonegenerator_tb(bhv)
+# SDF 2020.1 Compiler 2020.02 Feb 28 2020
+# 
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.tonegenerator(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+# Loading instances from tone_vhd.sdo
+# Loading timing data from tone_vhd.sdo
+# ** Warning: Design size of 52546 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /tonegenerator_tb File: E:/EE214_Digital_Lab/L7/Testbench.vhdl
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 40 ms
+# End time: 17:27:56 on Mar 27,2021, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 1

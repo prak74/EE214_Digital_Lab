@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+use work.Gates.all;
+
+entity output is 
+	port (curr_state : in std_logic_vector(2 downto 0);
+			output : out std_logic_vector(2 downto 0)
+			);
+end entity output;
+
+architecture struct of output is
+
+begin
+
+		--out(2)
+		output(2) <= ((not s2) and (not s1) and (not s0)) or (s2 and (s1 or s0));
+		
+		--out(1)
+		output(1) <= not s0;
+		
+		--out(0)
+		output(0) <= ((not s2) and s1 and s0) or ((not s1) and (s2 or (not s0)));
+		
+end struct;
